@@ -1,0 +1,19 @@
+from train_test import train_test
+
+if __name__ == "__main__":    
+    data_folder = 'BRCA'
+    view_list = [1,2,3]
+    num_epoch_pretrain = 700
+    num_epoch = 3000
+    lr_e_pretrain = 5e-3
+    lr_e = 1e-4
+    lr_c = 5e-2
+    
+    if data_folder == 'ROSMAP':
+        num_class = 2
+    if data_folder == 'BRCA':
+        num_class = 5
+    
+    train_test(data_folder, view_list, num_class,
+               lr_e_pretrain, lr_e, lr_c, 
+               num_epoch_pretrain, num_epoch)   
